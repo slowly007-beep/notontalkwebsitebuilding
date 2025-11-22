@@ -6,8 +6,10 @@ export default function Hero() {
   return (
     <section className="relative pt-20 pb-32 overflow-hidden">
       {/* 배경 Glow 효과 */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-brand/10 blur-[100px] rounded-full pointer-events-none opacity-50" />
-      
+      {/* 배경 Glow 효과 (수정됨) */}
+      {/* absolute -> fixed로 변경하여 스크롤을 따라다니게 함 */}
+      {/* -z-10을 추가하여 본문 내용 뒤쪽으로 배치 */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-brand/10 blur-[100px] rounded-full pointer-events-none opacity-50 -z-10" />      
       <div className="container relative z-10 flex flex-col items-center text-center">
         {/* 뱃지 */}
         <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 text-sm font-medium text-brand mb-8 hover:bg-brand/10 transition-colors cursor-default animate-in fade-in slide-in-from-bottom-4 duration-1000">
