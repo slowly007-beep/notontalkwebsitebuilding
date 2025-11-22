@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    naver: "29936f0eff6dcb2a75b696f7bb02eb3d24a90e4b",
+  other: {
+  "naver-site-verification": "29936f0eff6dcb2a75b696f7bb02eb3d24a90e4b",
   },
 };
 
