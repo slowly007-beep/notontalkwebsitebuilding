@@ -15,10 +15,11 @@ export default function Header() {
 
         {/* 데스크탑 네비게이션 */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <Link href="/community" className="text-muted-foreground hover:text-brand transition-colors">커뮤니티</Link>
+          <Link href="/guide" className="text-muted-foreground hover:text-brand transition-colors">노션가이드</Link>
           <Link href="/templates" className="text-muted-foreground hover:text-brand transition-colors">템플릿</Link>
-          <Link href="/automation" className="text-muted-foreground hover:text-brand transition-colors">자동화</Link>
-          <Link href="/courses" className="text-muted-foreground hover:text-brand transition-colors">강의</Link>
+          <Link href="/automation" className="text-muted-foreground hover:text-brand transition-colors">자동화레시피</Link>
+          <Link href="/community" className="text-muted-foreground hover:text-brand transition-colors">커뮤니티</Link>    
+          <Link href="/team" className="text-muted-foreground hover:text-brand transition-colors">만든이들</Link>
         </nav>
 
         <div className="flex items-center space-x-4">
