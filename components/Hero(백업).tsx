@@ -10,7 +10,7 @@ export default function Hero() {
       {/* absolute -> fixed로 변경하여 스크롤을 따라다니게 함 */}
       {/* 대안: 빛이 배경 뒤로 숨는 경우 사용 */}
         <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-brand/10 blur-[100px] rounded-full pointer-events-none opacity-50" />
-        D<div className="container relative z-10 flex flex-col items-center text-center">
+        <div className="container relative z-10 flex flex-col items-center text-center">
         {/* 뱃지 */}
         <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 text-sm font-medium text-brand mb-8 hover:bg-brand/10 transition-colors cursor-default animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <Sparkles className="mr-2 h-4 w-4" />
