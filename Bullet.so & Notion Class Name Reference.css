@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Bullet.so & Notion Class Name Reference
+   * 사이트 구조 및 디자인 커스텀용 참고 자료
+   ========================================================================== */
+
+/* ------------------------------------------------------------
+   1. [Bullet] 사이트 구조 & 네비게이션 (최상위 레벨)
+   ------------------------------------------------------------ */
+html, body, #__next, .bullet-site { }  /* 전체 페이지 래퍼 */
+.bullet-main { }                       /* 실제 콘텐츠가 들어가는 메인 영역 */
+
+/* 네비게이션 바 (상단 메뉴) */
+nav.navbar, .bullet-navbar { }
+.navbar-menu { }
+.navbar-brand { }
+.navbar-item, .navbar-link { }
+.navbar-burger { }                     /* 모바일 메뉴 햄버거 버튼 */
+.navbar-mobile-search { }
+.bullet-navbar-links { }
+.bullet-navbar-cta { }                 /* 우측 상단 버튼 (Use template 등) */
+.bullet-navbar-search { }
+.nav-cta-btn { }                       /* CTA 버튼 자체 */
+
+/* 검색창 오버레이 */
+.bullet-search-overlay { }
+.bullet-search-input { }
+.bullet-result-container { }
+.bullet-result { }
+.bullet-no-result { }
+
+/* ------------------------------------------------------------
+   2. [Notion] 페이지 기본 구조
+   ------------------------------------------------------------ */
+.notion-app { }
+.notion-frame { }
+.notion-page-scroller { }              /* 스크롤 영역 */
+.notion-body { }
+.notion-page-content { }               /* 글 본문 전체 */
+.notion-page-content-inner { }
+.site-content-container { }
+
+/* 페이지 속성 (아이콘, 커버 등) */
+.notion-page-no-cover { }
+.notion-page-has-icon { }
+.notion-page-icon-hero { }             /* 상단 대형 아이콘 영역 */
+.notion-page-icon-span { }
+.notion-page-icon { }                  /* 실제 이모지/아이콘 */
+.notion-title { }                      /* 페이지 제목 (h1) */
+
+/* ------------------------------------------------------------
+   3. [Notion] 블록 요소 (Blocks)
+   ------------------------------------------------------------ */
+.notion-text { }                       /* 일반 텍스트 */
+.notion-hr { }                         /* 구분선 */
+.notion-callout { }                    /* 콜아웃 박스 (강조 박스) */
+.notion-callout-text { }
+.notion-callout-title { }
+
+/* ------------------------------------------------------------
+   4. [Notion] 데이터베이스 (Database) 공통
+   ------------------------------------------------------------ */
+.notion-collection { }                 /* 데이터베이스 전체 래퍼 */
+.notion-collection-header { }          /* DB 상단 (보기 방식 선택, 검색 등) */
+.notion-collection-view-dropdown { }   /* 보기 방식 선택 버튼 */
+.notion-collection-search { }          /* DB 내 검색창 */
+.notion-collection-view-type-title { } /* 현재 보고 있는 뷰 이름 */
+
+/* ------------------------------------------------------------
+   5. [Notion] 데이터베이스 - 리스트 뷰 (List View)
+   ------------------------------------------------------------ */
+.notion-list-collection { }
+.notion-list-view { }
+.notion-list-body { }
+.notion-list-item { }                  /* 리스트 한 줄 */
+.notion-list-item-title { }            /* 리스트 제목 */
+.notion-list-item-body { }             /* 리스트 속성들 (태그 등) */
+.notion-list-item-property { }
+
+/* ------------------------------------------------------------
+   6. [Notion] 데이터베이스 - 갤러리 뷰 (Gallery View)
+   ------------------------------------------------------------ */
+.notion-gallery { }
+.notion-gallery-view { }
+.notion-gallery-grid { }
+.notion-collection-card { }            /* 갤러리 카드 한 장 */
+.notion-collection-card-cover { }      /* 카드 썸네일 이미지 영역 */
+.notion-collection-card-body { }       /* 카드 하단 텍스트 영역 */
+.notion-collection-card-property { }   /* 카드 내 속성 (제목, 태그 등) */
+
+/* ------------------------------------------------------------
+   7. [Notion] 데이터베이스 - 보드 뷰 (Board View / 칸반)
+   ------------------------------------------------------------ */
+.notion-board { }
+.notion-board-view { }
+.notion-board-header { }               /* 보드 상단 컬럼명 영역 */
+.notion-board-th { }                   /* 각 컬럼 헤더 */
+.notion-board-th-body { }
+.notion-board-th-count { }             /* 개수 표시 */
+.notion-board-body { }
+.notion-board-group { }                /* 세로줄 한 그룹 */
+.notion-board-group-card { }           /* 보드 내 카드 */
+
+/* ------------------------------------------------------------
+   8. [Notion] 데이터베이스 - 테이블 뷰 (Table View)
+   ------------------------------------------------------------ */
+.notion-table { }
+.notion-table-view { }
+.notion-table-header { }
+.notion-table-th { }                   /* 테이블 헤더 셀 */
+.notion-table-body { }
+.notion-table-row { }                  /* 테이블 가로줄 */
+.notion-table-cell { }                 /* 테이블 칸 */
+
+/* ------------------------------------------------------------
+   9. [Notion] 속성 및 태그 색상 (Properties & Colors)
+   ------------------------------------------------------------ */
+/* 속성 타입별 */
+.notion-property { }
+.notion-property-title { }             /* 제목 속성 */
+.notion-property-multi_select { }      /* 다중 선택 속성 (태그) */
+.notion-property-select { }            /* 단일 선택 속성 */
+.notion-property-created_time { }      /* 생성 일시 */
+.notion-property-checkbox { }          /* 체크박스 */
+
+/* 노션 색상 (태그 배경색 등) */
+.notion-item-gray { }
+.notion-item-brown { }
+.notion-item-orange { }
+.notion-item-yellow { }
+.notion-item-green { }
+.notion-item-blue { }
+.notion-item-purple { }
+.notion-item-pink { }
+.notion-item-red { }
+.notion-item-default { }
+
+/* 배경색 (보드 컬럼 배경 등) */
+.notion-item-bg-purple { }
+.notion-item-bg-pink { }
+/* (나머지 색상들도 패턴 동일: .notion-item-bg-[color]) */
+
+/* ------------------------------------------------------------
+   10. 기타 유틸리티 클래스
+   ------------------------------------------------------------ */
+.light-mode { }                        /* 라이트 모드 강제 클래스 */
+.dark-mode { }                         /* 다크 모드 */
+.hide { }                              /* 숨김 처리 */
+.search-title { }                      /* 검색 대상 제목 */
