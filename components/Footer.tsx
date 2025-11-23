@@ -14,7 +14,7 @@ export default function Footer() {
           {/* SNS 링크 */}
           <div className="flex space-x-6">
             <a 
-              href="https://threads.net/@notiontalk" 
+              href="https://threads.net/@iooo_tttt" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
@@ -22,7 +22,7 @@ export default function Footer() {
               Threads
             </a>
             <a 
-              href="https://instagram.com/notiontalk" 
+              href="https://instagram.com/iooo_tttt" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
@@ -30,7 +30,7 @@ export default function Footer() {
               Instagram
             </a>
             <a 
-              href="https://youtube.com/@notiontalk" 
+              href="https://youtube.com/@iooo_tttt" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
