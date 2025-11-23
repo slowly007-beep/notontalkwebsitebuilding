@@ -4,7 +4,7 @@ const nextConfig = {
   
   // ★ 핵심 해결책: 모든 주소 끝에 자동으로 '/'를 붙여줍니다.
   // 이렇게 하면 Vercel과 불렛 사이의 주소 오해를 없앨 수 있습니다.
-  trailingSlash: true, 
+  trailingSlash: false, 
 
   async rewrites() {
     return [
