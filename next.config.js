@@ -1,62 +1,51 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  
-  // ★ 핵심 해결책: 모든 주소 끝에 자동으로 '/'를 붙여줍니다.
-  // 이렇게 하면 Vercel과 불렛 사이의 주소 오해를 없앨 수 있습니다.
-  trailingSlash: false, 
+  // 1. [필수] 사이트 주소 끝에 무조건 슬래시를 붙입니다. (불렛과 규칙 통일)
+  trailingSlash: true,
 
   async rewrites() {
     return [
-      // 1. 가이드
+      // ==============================================
+      // 1. 템플릿 (Templates)
+      // ==============================================
+      {
+        // 사용자가 /templates 로 들어오면
+        source: '/templates',
+        // 불렛의 /templates/ 로 연결 (슬래시 필수!)
+        destination: 'https://content.notiontalk.com/templates/', 
+      },
+      {
+        // 사용자가 /templates/제목 으로 들어오면
+        source: '/templates/:slug*',
+        // 불렛의 /templates/제목/ 으로 연결 (★여기가 핵심! 뒤에 슬래시 추가★)
+        destination: 'https://content.notiontalk.com/templates/:slug*/', 
+      },
+
+      // ==============================================
+      // 2. 가이드 (Guide)
+      // ==============================================
       {
         source: '/guide',
-        destination: 'https://content.notiontalk.com/guide/', // 뒤에 / 붙임
+        destination: 'https://content.notiontalk.com/guide/',
       },
       {
-        source: '/guide/:path*',
-        destination: 'https://content.notiontalk.com/guide/:path*',
+        source: '/guide/:slug*',
+        destination: 'https://content.notiontalk.com/guide/:slug*/', // 여기도 슬래시 추가
       },
 
-      // 2. 템플릿
-      {
-        source: '/templates',
-        destination: 'https://content.notiontalk.com/templates/', // 뒤에 / 붙임
-      },
-      {
-        source: '/templates/:path*',
-        destination: 'https://content.notiontalk.com/templates/:path*',
-      },
-
-      // 3. 자동화
-      {
-        source: '/automation',
-        destination: 'https://content.notiontalk.com/automation/', // 뒤에 / 붙임
-      },
-      {
-        source: '/automation/:path*',
-        destination: 'https://content.notiontalk.com/automation/:path*',
-      },
-
-      // 4. 커뮤니티
+      // ==============================================
+      // 3. 커뮤니티, 팀 등 나머지
+      // ==============================================
       {
         source: '/community',
-        destination: 'https://content.notiontalk.com/community/', // 뒤에 / 붙임
+        destination: 'https://content.notiontalk.com/community/',
       },
       {
-        source: '/community/:path*',
-        destination: 'https://content.notiontalk.com/community/:path*',
+        source: '/community/:slug*',
+        destination: 'https://content.notiontalk.com/community/:slug*/',
       },
-
-      // 5. 팀
-      {
-        source: '/team',
-        destination: 'https://content.notiontalk.com/team/', // 뒤에 / 붙임
-      },
-      {
-        source: '/team/:path*',
-        destination: 'https://content.notiontalk.com/team/:path*',
-      },
+      // 필요한 만큼 추가하세요
     ];
   },
 };
