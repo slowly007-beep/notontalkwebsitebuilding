@@ -37,8 +37,8 @@ export default function Hero() {
             asChild
             className="h-12 px-8 bg-brand text-black hover:bg-brand-hover text-base font-bold shadow-[0_0_20px_rgba(244,202,68,0.3)] hover:scale-105 transition-all duration-300"
           >
-            <Link href="https://www.threads.com/@iooo_tttt" target="_blank" rel="noopener noreferrer">
-              Threads에서 소식 받기
+            <Link href="https://open.kakao.com/o/gpSvPKGg" target="_blank" rel="noopener noreferrer">
+              오픈카톡 참여하기
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -48,8 +48,8 @@ export default function Hero() {
             asChild
             className="h-12 px-8 border-white/10 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm hover:scale-105 transition-all duration-300"
           >
-            <Link href="https://open.kakao.com/o/gpSvPKGg" target="_blank" rel="noopener noreferrer">
-              오픈카톡 참여하기
+            <Link href="https://www.threads.com/@iooo_tttt" target="_blank" rel="noopener noreferrer">
+              Threads에서 소식 받기
             </Link>
           </Button>
         </div>
