@@ -1,5 +1,3 @@
-import { SNS_LINKS } from "@/config/navigation"
-
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black py-12">
@@ -16,7 +14,7 @@ export default function Footer() {
           {/* SNS 링크 */}
           <div className="flex space-x-6">
             <a 
-              href="https://threads.net/@iooo_tttt" 
+              href="https://threads.net/@notiontalk" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
@@ -24,7 +22,7 @@ export default function Footer() {
               Threads
             </a>
             <a 
-              href="https://instagram.com/iooo_tttt" 
+              href="https://instagram.com/notiontalk" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
@@ -32,7 +30,7 @@ export default function Footer() {
               Instagram
             </a>
             <a 
-              href="https://youtube.com/@iooo_tttt" 
+              href="https://youtube.com/@notiontalk" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors text-sm"
