@@ -2,40 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 본문 폰트 (Pretendard) 불러오기 */
+/* Pretendard (본문용) */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 @layer base {
   :root {
-    --background: 0 0% 6%;    /* #0f0f0f */
-    --foreground: 0 0% 95%;   /* #f2f2f2 */
+    /* Aave Style Light Theme Palette */
+    --background: 240 20% 97%;    /* #F6F6F8 (아주 연한 쿨톤 회색) */
+    --foreground: 224 28% 15%;    /* #1B2030 (완전 검정이 아닌 딥 네이비) */
     
-    --card: 0 0% 9%;          /* #171717 */
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;            /* #FFFFFF */
+    --card-foreground: 224 28% 15%;
     
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 28% 15%;
     
-    --primary: 46 87% 61%;    /* #f4ca44 (Brand Yellow) */
-    --primary-foreground: 0 0% 10%;
+    /* Brand Color: 기존 노란색을 유지하되, 밝은 테마에 맞게 조정 */
+    --primary: 46 90% 55%;        /* 조금 더 진한 옐로우 (가독성 확보) */
+    --primary-foreground: 224 28% 15%;
     
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 240 5% 90%;      /* 연한 회색 버튼 배경 */
+    --secondary-foreground: 224 28% 15%;
     
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 240 5% 90%;
+    --muted-foreground: 220 10% 45%;
     
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 250 80% 95%;        /* 연보라빛 포인트 */
+    --accent-foreground: 224 28% 15%;
     
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 46 87% 61%;
+    --border: 220 13% 91%;        /* 아주 연한 회색 테두리 */
+    --input: 220 13% 91%;
+    --ring: 224 28% 15%;          /* 포커스 링은 진한 색으로 */
     
-    --radius: 0.75rem;
+    --radius: 1rem;               /* 16px (Aave처럼 조금 더 둥글게) */
   }
 }
 
@@ -44,7 +46,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-brand/30 selection:text-brand;
+    @apply bg-background text-foreground font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
@@ -52,13 +54,18 @@
 }
 
 @layer utilities {
-  /* 유리 질감 효과 (Glassmorphism) */
+  /* Aave Style Glassmorphism (Light Ver.) */
   .glass {
-    @apply bg-black/40 backdrop-blur-lg border border-white/10;
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
   }
   
-  /* 브랜드 컬러 그라데이션 텍스트 */
-  .text-gradient-brand {
-    @apply bg-gradient-to-r from-brand via-yellow-200 to-brand bg-clip-text text-transparent;
+  /* Glass Card Hover Effect */
+  .glass-card {
+    @apply glass transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:border-brand/30;
+  }
+
+  /* Text Gradient (Brand Yellow + Pink/Blue mix for Aave feel) */
+  .text-gradient-mesh {
+    @apply bg-gradient-to-r from-[#1B2030] via-brand-hover to-[#F4CA44] bg-clip-text text-transparent;
   }
 }
