@@ -27,15 +27,15 @@ const faqs = [
 export default function FAQ() {
   return (
     <section className="py-24 container max-w-3xl">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">자주 묻는 질문</h2>
+      <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-12 text-[#1B2030]">자주 묻는 질문</h2>
       
       <Accordion type="single" collapsible className="space-y-4">
         {faqs.map((faq, idx) => (
-          <AccordionItem key={idx} value={`item-${idx}`} className="border border-white/10 rounded-lg px-6 bg-white/5 data-[state=open]:border-brand/30 data-[state=open]:bg-white/10 transition-all">
-            <AccordionTrigger className="text-lg hover:no-underline hover:text-brand py-6 font-medium text-left">
+          <AccordionItem key={idx} value={`item-${idx}`} className="border border-black/5 rounded-2xl px-6 bg-white/40 data-[state=open]:bg-white/80 data-[state=open]:shadow-md transition-all">
+            <AccordionTrigger className="text-lg hover:no-underline hover:text-brand-hover py-6 font-bold text-[#1B2030] text-left">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground text-base pb-6 leading-relaxed">
+            <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
               {faq.a}
             </AccordionContent>
           </AccordionItem>

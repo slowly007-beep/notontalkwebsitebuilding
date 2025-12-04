@@ -27,30 +27,30 @@ export default function Testimonials() {
   return (
     <section className="py-24">
       <div className="container">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-16 text-[#1B2030]">
           유저들의 생생한 후기
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((item, idx) => (
-            <Card key={idx} className="glass border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-brand/20 transition-colors">
+            <Card key={idx} className="bg-white/50 backdrop-blur-sm border border-white/60 hover:border-brand/30 transition-all hover:-translate-y-1 shadow-sm">
               <CardContent className="p-8">
                 <div className="flex space-x-1 mb-6">
                   {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-brand text-brand" />
                   ))}
                 </div>
-                <p className="text-lg mb-8 text-gray-300 leading-relaxed">"{item.content}"</p>
+                <p className="text-lg mb-8 text-gray-700 leading-relaxed font-medium">"{item.content}"</p>
                 <div className="flex items-center space-x-4">
-                  <Avatar className="h-12 w-12 ring-2 ring-brand/20">
+                  <Avatar className="h-12 w-12 ring-2 ring-white shadow-md">
                     <AvatarImage src={`/avatars/${idx}.png`} />
-                    <AvatarFallback className="bg-brand text-black font-bold">
+                    <AvatarFallback className="bg-gray-100 text-black font-bold">
                       {item.name[0]}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold text-white">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">{item.role}</p>
+                    <p className="font-bold text-[#1B2030]">{item.name}</p>
+                    <p className="text-sm text-gray-500">{item.role}</p>
                   </div>
                 </div>
               </CardContent>

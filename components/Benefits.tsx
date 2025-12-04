@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Layers, Zap, Target, Share2, Smartphone, Lock } from "lucide-react"
+import { Layers, Zap, Target, Share2, Smartphone } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const benefits = [
@@ -37,13 +37,13 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-24 bg-black/20">
+    <section className="py-24">
       <div className="container">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            왜 <span className="text-brand">NotionTalk</span>인가요?
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-[#1B2030]">
+            왜 <span className="text-brand-hover">NotionTalk</span>인가요?
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-gray-600 text-lg">
             수천 명의 유저가 선택한 이유를 확인해보세요.
           </p>
         </div>
@@ -53,25 +53,22 @@ export default function Benefits() {
             <Card 
               key={idx} 
               className={cn(
-                "glass border-white/5 p-6 hover:bg-white/5 transition-all duration-300 group overflow-hidden relative",
+                "bg-white/40 backdrop-blur-md border border-white/60 p-6 hover:bg-white/60 transition-all duration-300 group overflow-hidden relative shadow-sm hover:shadow-lg",
                 benefit.className
               )}
             >
-              {/* Hover Glow Effect */}
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-brand/10 rounded-full blur-3xl group-hover:bg-brand/20 transition-colors" />
-              
               <CardHeader className="relative z-10 p-0 h-full flex flex-col justify-between">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-brand group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center mb-4 text-[#1B2030] shadow-sm group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
                 <div>
                   <CardTitle className={cn(
-                    "mb-3 font-sans",
+                    "mb-3 font-sans text-[#1B2030]",
                     benefit.className?.includes("col-span-2") ? "text-3xl" : "text-xl"
                   )}>
                     {benefit.title}
                   </CardTitle>
-                  <CardDescription className="text-base text-muted-foreground">
+                  <CardDescription className="text-base text-gray-600">
                     {benefit.desc}
                   </CardDescription>
                 </div>
