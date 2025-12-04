@@ -30,16 +30,17 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased overflow-x-hidden"
         )}
       >
-        {/* Aave Style Animated Mesh Background */}
-        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#F6F6F8]">
-           {/* Blob 1: Brand Yellow */}
-           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand/30 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob" />
-           {/* Blob 2: Soft Purple (Aave Vibe) */}
-           <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-300/30 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-2000" />
-           {/* Blob 3: Soft Blue */}
-           <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-blue-300/30 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-4000" />
+        {/* Aave Style Animated Mesh Background (Warm Version) */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#F9F9F8]"> {/* 배경도 아주 연한 웜그레이로 */}
+          {/* Blob 1: Soft Orange (따뜻함의 중심) */}
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-200/40 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob" />
+          
+          {/* Blob 2: Warm Yellow (노션 브랜드 컬러와 조화) */}
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-yellow-200/40 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-2000" />
+          
+          {/* Blob 3: Soft Rose/Pink (생기와 감성) */}
+          <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-rose-200/40 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-4000" />
         </div>
-        
         {children}
       </body>
     </html>
