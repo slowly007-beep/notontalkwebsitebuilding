@@ -1,12 +1,12 @@
-import Header from "@/components/ui/Header";
-import Hero from "@/components/ui/Hero";
-import MediaSection from "@/components/ui/MediaSection";
-import Benefits from "@/components/ui/Benefits";
-import GetStarted from "@/components/ui/GetStarted";
-import Testimonials from "@/components/ui/Testimonials";
-import FAQ from "@/components/ui/FAQ";
-import FinalCTA from "@/components/ui/FinalCTA";
-import Footer from "@/components/ui/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import MediaSection from "@/components/MediaSection";
+import Benefits from "@/components/Benefits";
+import GetStarted from "@/components/GetStarted";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
