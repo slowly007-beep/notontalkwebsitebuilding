@@ -1,3 +1,8 @@
+/* [수정 사항]
+  모든 import 경로에서 '/ui'를 제거했습니다.
+  예: "@/components/ui/Header" -> "@/components/Header"
+*/
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MediaSection from "@/components/MediaSection";
