@@ -5,31 +5,61 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 // ----------------------------------------------------------------------
 // [중요] 실제 Next.js 프로젝트에서는 아래 주석을 풀고 사용하세요.
+// (배포 시에는 아래 두 줄의 주석을 풀고, 밑에 있는 임시 컴포넌트들을 지우는 것이 정석입니다.)
 // import Link from "next/link"
 // import { Button } from "@/components/ui/button"
 // ----------------------------------------------------------------------
 
 // ----------------------------------------------------------------------
-// [미리보기용 목업 컴포넌트]
+// [미리보기 및 빌드 에러 방지용 목업 컴포넌트]
+// TypeScript 환경에서도 에러가 나지 않도록 타입을 명시했습니다.
 // ----------------------------------------------------------------------
-const Link = ({ href, children, className, ...props }) => (
-  <a href={href} className={className} {...props}>{children}</a>
+
+// Link 컴포넌트 타입 정의
+interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Link = ({ href, children, className, ...props }: LinkProps) => (
+  <a href={href} className={className} {...props}>
+    {children}
+  </a>
 );
 
-const Button = ({ variant = "default", size = "default", className, asChild, children, ...props }) => {
+// Button 컴포넌트 타입 정의
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "ghost" | "outline";
+  size?: "default" | "lg" | "sm";
+  asChild?: boolean;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+const Button = ({ 
+  variant = "default", 
+  size = "default", 
+  className, 
+  asChild, 
+  children, 
+  ...props 
+}: ButtonProps) => {
   const baseStyles = "inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
-  // 디자인 철학에 맞춘 버튼 스타일 기본값 재정의
-  const variants = {
+  
+  const variants: Record<string, string> = {
     default: "bg-[#151922] text-[#F0EEE9] hover:bg-black",
     ghost: "bg-white/50 border border-[#151922]/5 text-[#151922] hover:bg-white/80 backdrop-blur-sm",
-  };
-  const sizes = {
-    default: "h-10 px-4 py-2",
-    lg: "h-12 md:h-14 px-8 rounded-2xl", // 둥근 모서리 강조
+    outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
   };
   
-  const appliedClass = `${baseStyles} ${variants[variant] || variants.default} ${sizes[size]} ${className || ""}`;
-  const Comp = asChild ? React.Fragment : "button";
+  const sizes: Record<string, string> = {
+    default: "h-10 px-4 py-2",
+    lg: "h-12 md:h-14 px-8 rounded-2xl",
+    sm: "h-9 rounded-md px-3"
+  };
+  
+  const appliedClass = `${baseStyles} ${variants[variant] || variants.default} ${sizes[size] || sizes.default} ${className || ""}`;
 
   return asChild ? (
     <div className={appliedClass}>{children}</div>
@@ -41,7 +71,7 @@ const Button = ({ variant = "default", size = "default", className, asChild, chi
 
 export default function Hero() {
   
-  // [검색 제외 설정] - 유지
+  // [검색 제외 설정]
   useEffect(() => {
     const meta = document.createElement('meta');
     meta.name = "robots";
@@ -78,26 +108,22 @@ export default function Hero() {
 
       <section className="relative pt-32 pb-40 overflow-hidden">
         
-        {/* 배경 장식 요소 (은은한 그라데이션) */}
+        {/* 배경 장식 요소 */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-white to-transparent -z-10" />
 
         <div className="container mx-auto relative z-10 flex flex-col items-center text-center px-4 md:px-0">
           
-          {/* Badge: 모바일에서도 잘 보이게 텍스트 크기 조정 */}
+          {/* Badge */}
           <div className="inline-flex items-center rounded-full border border-[#151922]/10 bg-white/50 backdrop-blur-md px-3 py-1 md:px-4 md:py-1.5 text-xs md:text-sm font-medium text-[#151922]/80 mb-8 hover:scale-105 transition-transform cursor-default shadow-sm animate-fade-in-up">
             <Sparkles className="mr-2 h-3 w-3 md:h-4 md:w-4 text-[#E6C768]" />
             <span className="font-sans">교사를 위한 스마트한 노션 가이드</span>
           </div>
 
-          {/* Main Title (핵심 디자인 적용) */}
-          {/* 1. text-4xl ~ 8xl: 반응형 크기 조절 */}
-          {/* 2. break-keep: 한국어 단어 유지 */}
-          {/* 3. leading-tight: 타이포그래피 밀도감 */}
+          {/* Main Title */}
           <h1 className="max-w-5xl text-4xl sm:text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 text-[#151922] animate-fade-in-up break-keep leading-tight delay-100" style={{ animationDelay: "0.1s" }}>
             노션, 이제 <br className="hidden md:block" />
             <span className="relative inline-block">
                나만의 방식
-               {/* 밑줄 효과 (반응형 높이/색상 조절) */}
                <span className="absolute bottom-1 left-0 w-full h-2 md:h-6 bg-[#E6C768]/40 -z-10 rounded-full transform -rotate-1"></span>
             </span>
             으로
@@ -110,7 +136,6 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          {/* 기존의 링크(오픈카톡/스레드)는 유지하되 디자인은 새 스타일 적용 */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-in-up px-4 sm:px-0 delay-300" style={{ animationDelay: "0.3s" }}>
             <Button 
               size="lg" 
@@ -144,7 +169,6 @@ export default function Hero() {
                   key={i} 
                   className="h-8 w-8 md:h-10 md:w-10 rounded-full border-2 border-white bg-gray-200 shadow-sm relative overflow-hidden"
                 >
-                   {/* 실제 이미지 대신 플레이스홀더 색상/이미지 사용 */}
                    <img 
                      src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${i * 123}`} 
                      alt="avatar"
